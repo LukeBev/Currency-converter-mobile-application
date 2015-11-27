@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--
+University of Strathclyde CS317 
+Currency Converter
+Author: Luke Beveridge
+11/02/2015
+-->
+
+<html>
+    <head>
+        <title>Currency Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="icon" sizes="192x192" href="images/ccLogo.png" />
+        <link rel="apple-touch-icon" href="images/ccLogo.png" />
+        <link rel="shortcut icon" href="images/ccLogo.png" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header>Currency Calculator</header>        
+     
+                     <table id="wholeCalc">
+                        <tr id="disTr">
+                            <td>
+                                <div id="displayZone" ></div>
+                            </td>
+                        </tr>
+                        <tr><td>
+                        <table id="exchange">
+                            <tr>
+                                <td> 
+                                    <div id = "fromCur" class="cur">
+                                        <div id="fromText"><p>From: </p></div>
+                                        <select id = "fromSel" class="dropbox">
+                                            <option value="EUR">EUR</option>
+                                            <option value="USD">USD</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="BGN">BGN</option>
+                                            <option value="CZK">CZK</option>
+                                            <option value="DKK">DKK</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="HUF">HUF</option>
+                                            <option value="PLN">PLN</option>
+                                            <option value="RON">RON</option>
+                                            <option value="SEK">SEK</option>
+                                            <option value="CHF">CHF</option>
+                                            <option value="NOK">NOK</option>
+                                            <option value="HRK">HRK</option>
+                                            <option value="RUB">RUB</option>
+                                            <option value="TRY">TRY</option>
+                                            <option value="AUD">AUD</option>
+                                            <option value="BRL">BRL</option>
+                                            <option value="CAD">CAD</option>
+                                            <option value="CNY">CNY</option>
+                                            <option value="HKD">HKD</option>
+                                            <option value="IDR">IDR</option>
+                                            <option value="ILS">ILS</option>
+                                            <option value="INR">INR</option>
+                                            <option value="KRW">KRW</option>
+                                            <option value="MXN">MXN</option>
+                                            <option value="MYR">MYR</option>
+                                            <option value="NZD">NZD</option>
+                                            <option value="PHP">PHP</option>
+                                            <option value="SGD">SGD</option>
+                                            <option value="THB">THB</option>
+                                            <option value="ZAR">ZAR</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id = "toCur" class="cur">
+                                        <div id="toText"><p>To: </p></div>
+                                        <select id = "toSel" class="dropbox">
+                                            <option value="EUR">EUR</option>
+                                            <option value="USD">USD</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="BGN">BGN</option>
+                                            <option value="CZK">CZK</option>
+                                            <option value="DKK">DKK</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="HUF">HUF</option>
+                                            <option value="PLN">PLN</option>
+                                            <option value="RON">RON</option>
+                                            <option value="SEK">SEK</option>
+                                            <option value="CHF">CHF</option>
+                                            <option value="NOK">NOK</option>
+                                            <option value="HRK">HRK</option>
+                                            <option value="RUB">RUB</option>
+                                            <option value="TRY">TRY</option>
+                                            <option value="AUD">AUD</option>
+                                            <option value="BRL">BRL</option>
+                                            <option value="CAD">CAD</option>
+                                            <option value="CNY">CNY</option>
+                                            <option value="HKD">HKD</option>
+                                            <option value="IDR">IDR</option>
+                                            <option value="ILS">ILS</option>
+                                            <option value="INR">INR</option>
+                                            <option value="KRW">KRW</option>
+                                            <option value="MXN">MXN</option>
+                                            <option value="MYR">MYR</option>
+                                            <option value="NZD">NZD</option>
+                                            <option value="PHP">PHP</option>
+                                            <option value="SGD">SGD</option>
+                                            <option value="THB">THB</option>
+                                            <option value="ZAR">ZAR</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id = "cut" class="cur">
+                                        <div id="cutText"><p>Cut %: </p></div>
+                                        <select id = "cutSel" class="dropbox">
+                                            <option value="0">0%</option>
+                                            <option value="2">2%</option>
+                                            <option value="4">4%</option>
+                                            <option value="6">6%</option>                                        
+                                        </select>
+                                    </div>
+                                </td>
+                                <td id="confirmTd"><button id="confirm">Confirm</button></td>
+                            </tr>
+                        </table></td>
+                        <tr>
+                            <td>
+                                <table class="keypad">
+                                    <tr id="buttonRow1">
+                                        <td><button id="numButton7" class="but">7</button></td>
+                                        <td><button id="numButton8" class="but">8</button></td>
+                                        <td><button id="numButton9" class="but">9</button></td>        
+                                    </tr>
+        
+                                    <tr id="buttonRow2">
+                                        <td><button id="numButton4" class="but">4</button></td>
+                                        <td><button id="numButton5" class="but">5</button></td>
+                                        <td><button id="numButton6" class="but">6</button></td>
+                                    </tr>
+       
+                                    <tr id="buttonRow3">
+                                        <td><button id="numButton1" class="but">1</button></td>
+                                        <td><button id="numButton2" class="but">2</button></td>
+                                        <td><button id="numButton3" class="but">3</button></td>
+                                    </tr>
+            
+                                    <tr id="buttonRow4">
+                                        <td><button id="numButtonC" class="but">c</button></td>
+                                        <td><button id="numButton0" class="but">0</button></td>
+                                        <td><button id="numButtonE" class="but">=</button></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+               
+        <footer>&copy; 2015 Luke Beveridge</footer>       
+        <script src="ModelCC.js"></script>
+        <script src="ViewCC.js"></script>
+        <script src="ControllerCC.js"></script>
+    </body>
+</html>
